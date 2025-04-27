@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 108 30% 70%; /* #A8C7A1 sage green */
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 92%; /* #EAEAEA for section headings */
+    --secondary-foreground: 0 0% 0%;
+
+    --accent: 108 30% 70%; /* #A8C7A1 sage green */
+    --accent-foreground: 0 0% 0%;
+
+    --tertiary: 108 30% 70%; /* #A8C7A1 sage green */
+    --tertiary-foreground: 0 0% 0%;
+
+    --muted: 0 0% 92%;
+    --muted-foreground: 0 0% 45%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 92%;
+    --input: 0 0% 92%;
+    --ring: 108 30% 70%;
+
+    --radius: 1rem;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 108 30% 60%; /* Darker sage green for dark mode */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 15%; /* Darker gray for section headings in dark mode */
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 108 30% 60%; /* Darker sage green for dark mode */
+    --accent-foreground: 0 0% 100%;
+
+    --tertiary: 108 30% 60%; /* Darker sage green for dark mode */
+    --tertiary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 108 30% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Add smooth transitions for theme changes */
+.transition-theme {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Add animation for error messages */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-in-out;
+}
